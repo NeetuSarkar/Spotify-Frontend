@@ -1,54 +1,123 @@
-# React + TypeScript + Vite
+# 🎧 Spotify Clone – Microservices Architecture
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-featured Spotify clone built using a microservice architecture. This project includes secure user authentication, role-based admin access, album and song management, and thumbnail uploads — all deployed on AWS EC2.
 
-Currently, two official plugins are available:
+🔗 **Live Site**: [http://ec2-13-235-76-71.ap-south-1.compute.amazonaws.com](http://ec2-13-235-76-71.ap-south-1.compute.amazonaws.com)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- 🔐 JWT-based authentication with role-based access (Admin/User)
+- 🎵 Add, update, delete songs and albums
+- 🖼️ Upload thumbnails for albums
+- 🛠️ Admin panel for managing content
+- 🧱 Microservices-based backend
+- ☁️ Deployed on AWS EC2 (Frontend + Backend)
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+---
+
+## 🛠 Tech Stack
+
+### Frontend
+- React.js
+- Axios
+- TailwindCSS
+
+### Backend (Microservices)
+- Node.js / Express.js
+- MongoDB
+- Multer (for file uploads)
+- JWT (Authentication)
+
+### Deployment
+- AWS EC2 (Ubuntu)
+- Nginx or PM2 (if used)
+- Git + GitHub
+
+---
+
+## 📸 Screenshots
+
+> Add UI screenshots of the user dashboard, admin panel, album views, etc.
+
+---
+
+## ⚙️ Getting Started
+
+### 1. Clone the Repositories
+
+```bash
+git clone https://github.com/NeetuSarkar/Spotify-Frontend.git
+git clone https://github.com/yourusername/spotify-backend.git
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Setup - Backend
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+cd spotify-backend
+npm install
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+# Create a .env file
+MONGO_URI=your_mongo_connection_string
+JWT_SECRET=your_jwt_secret
+PORT=5000
+
+npm start
 ```
+
+### 3. Setup - Frontend
+
+```bash
+cd Spotify-Frontend
+npm install
+npm run dev
+```
+
+Update the frontend `.env` or axios base URLs if needed to point to your backend.
+
+---
+
+## 🧪 Admin Demo Credentials
+
+> For testing purposes only:
+> - **Email:** `admin@example.com`
+> - **Password:** `admin123`
+
+---
+
+## 🌐 Live Demo
+
+Frontend: [http://ec2-13-235-76-71.ap-south-1.compute.amazonaws.com](http://ec2-13-235-76-71.ap-south-1.compute.amazonaws.com)
+
+---
+
+## 🔭 Roadmap
+
+- [ ] CI/CD with GitHub Actions
+- [ ] Dockerize microservices
+- [ ] Deploy with ECS or Kubernetes
+- [ ] Playlist and Favorites support
+- [ ] Enhanced search and filters
+
+---
+
+## 🧠 Lessons Learned
+
+- Building scalable microservices
+- Role-based authentication systems
+- AWS EC2 deployment with Node.js and React
+- Handling file uploads (Multer)
+- API integration and route protection in React
+
+---
+
+## 🤝 Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+---
+
+## 🙋‍♀️ Author
+
+Built by [Neetu Sarkar](https://github.com/NeetuSarkar)
